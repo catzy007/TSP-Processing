@@ -1,16 +1,13 @@
 boolean pressed = false;
 boolean begin = false;
+IntList nodeInputX, nodeInputY;
 
+int maxNodes = 15; //Intentional limiter, you may need to change this
 PVector[] nodes;
 int[] order;
 int[] currentPath;
-int maxNodes = 20;
 int nodeCount;
 float recordDistance;
-
-
-IntList nodeInputX, nodeInputY;
-
 
 int rectX, rectY;
 int rectSize = 50;
@@ -41,6 +38,14 @@ void mousePressed() {
     pressed = false;
     begin = true;
     nodeCount = nodeInputX.size();
+    if(nodeCount > maxNodes){
+      for(int i = nodeCount-1; i >= maxNodes; i--){
+        nodeInputX.remove(i);
+        nodeInputY.remove(i);
+      }
+      nodeCount = nodeInputX.size();
+    }
+    //print(nodeInputX + "\n"); print(nodeInputY + "\n");
     for (int i = 0; i < nodeCount; i++) {
       PVector v = new PVector(nodeInputX.get(i), nodeInputY.get(i));
       nodes[i] = v;
