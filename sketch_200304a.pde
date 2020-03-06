@@ -47,6 +47,7 @@ void mousePressed() {
       order[i] = i;
     }
     float d = calcDistance(nodes, order);
+    print("Current shortest distance " + d + "\n");
     recordDistance = d;
     arrayCopy(order, currentPath);
   }
