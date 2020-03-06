@@ -139,7 +139,21 @@ void draw() {
   
   if(begin){
     background(250);
+    //draw test
     noFill();
+    stroke(0, 255, 255);
+    strokeWeight(2);
+    beginShape();
+    for (int i = 0; i < nodeCount; i++) {
+      int n = order[i];
+      vertex(nodes[n].x, nodes[n].y);
+    }
+    endShape();
+    
+    //draw result
+    noFill();
+    stroke(0);
+    strokeWeight(1);
     beginShape();
     for (int i = 0; i < nodeCount; i++) {
       int n = currentPath[i];
@@ -148,6 +162,7 @@ void draw() {
       vertex(nodes[n].x, nodes[n].y);
     }
     endShape();
+    
     float d = calcDistance(nodes, order);
     if (d < recordDistance) {
       print("Current shortest distance " + d + "\n");
