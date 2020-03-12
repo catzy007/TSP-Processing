@@ -29,11 +29,10 @@ long time;
 
 
 void setup(){
-  size(400,400);
+  size(800,800);
   cursor(CROSS);
   smooth();
   ellipseMode(CENTER);
-  //backImage = loadImage("backimage.jpg");
   overAlgorithm = overOption = overGraph = -1;
   showOption[2] = true;
   /* MAP 0 : Cityscape
@@ -45,7 +44,7 @@ void setup(){
    */
   graphNo = 0;
   nodeSize[graphNo] = 4.0f;
-  graphImage[graphNo] = loadImage("test.jpg");
+  graphImage[graphNo] = loadImage("Untitled.png");
   gs[graphNo] = new Graph();
   makeGraphFromBWimage(gs[graphNo], graphImage[graphNo], null, 100, 100, false);
   gNodes =  gs[graphNo].getNodeArray();
