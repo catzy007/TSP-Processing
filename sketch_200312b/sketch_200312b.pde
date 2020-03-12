@@ -17,6 +17,7 @@ int rectSize = 50;
 color rectColor;
 color rectHighlight;
 boolean rectOver = false;
+PImage semarang;
 
 Graph[] gs = new Graph[4];
 PImage[] graphImage = new PImage[4];
@@ -43,10 +44,11 @@ boolean selectMode = false;
 long time;
 
 void setup(){
-  size(800,480);
+  size(820,400);
   cursor(CROSS);
   smooth();
   ellipseMode(CENTER);
+  semarang = loadImage("1.png");
   
 //TSP
   nodeInputX = new IntList();
@@ -73,7 +75,7 @@ void setup(){
    */
   graphNo = 0;
   nodeSize[graphNo] = 4.0f;
-  graphImage[graphNo] = loadImage("Untitled.png");
+  graphImage[graphNo] = loadImage("2.png");
   gs[graphNo] = new Graph();
   makeGraphFromBWimage(gs[graphNo], graphImage[graphNo], null, 100, 100, false);
   gNodes =  gs[graphNo].getNodeArray();
@@ -174,17 +176,20 @@ void draw(){
   }
   
   if(!map2_drawn){
-    translate(offX, offY);
-    if(graphImage[graphNo] != null)
-      image(graphImage[graphNo],0,0);
+    image(semarang, 0, 0);
+    //translate(offX, offY);
+    //if(graphImage[graphNo] != null)
+    //  image(graphImage[graphNo],0,0);
     map2_drawn = true;
   }
   
   if(begin){
     background(250);
     translate(offX, offY);
-    if(graphImage[graphNo] != null)
-      image(graphImage[graphNo],0,0);
+    //draw map
+    image(semarang, 0, 0);
+    //if(graphImage[graphNo] != null)
+    //  image(graphImage[graphNo],0,0);
     //draw test
     noFill();
     stroke(0, 255, 255);
@@ -221,9 +226,10 @@ void draw(){
   }
   if(tsp_finished){
     if(!map1_drawn){
-      translate(offX, offY);
-      if(graphImage[graphNo] != null)
-        image(graphImage[graphNo],0,0);
+      image(semarang, 0, 0);
+      //translate(offX, offY);
+      //if(graphImage[graphNo] != null)
+      //  image(graphImage[graphNo],0,0);
       map1_drawn = true;
     }
     for (int i = 0; i < nodeCount - 1; i++) {
