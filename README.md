@@ -11,3 +11,5 @@ Brute-force TSP (Lexicographic Ordering) and Pathfinder (A-STAR) algorithm to fi
 ![alt text](https://raw.githubusercontent.com/catzy007/TSP-Processing/master/img/2.png "Img2")
 
 ![alt text](https://raw.githubusercontent.com/catzy007/TSP-Processing/master/img/1.png "Img3")
+
+> Install pathfinder library in `LIBRARY` to your local sketch directory!
