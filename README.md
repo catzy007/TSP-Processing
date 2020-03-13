@@ -1,4 +1,6 @@
 # TSP-Processing
+Brute-force TSP (Lexicographic Ordering) and Pathfinder (A-STAR) algorithm to find (best) route to minimise distance in real-world local map.
+
 * Draw your point 
     * `min : 4`
     * `max : 15`
